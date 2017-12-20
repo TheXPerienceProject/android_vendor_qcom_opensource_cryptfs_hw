@@ -331,6 +331,7 @@ static unsigned char* get_tmp_passwd(const char* passwd)
     return tmp_passwd;
 }
 
+#ifdef WAIT_FOR_QSEE
 static int is_qseecom_up()
 {
     int i = 0;
@@ -348,6 +349,12 @@ static int is_qseecom_up()
     }
     return 0;
 }
+#else
+static int is_qseecom_up()
+{
+    return 1;
+}
+#endif
 
 #ifdef LEGACY_HW_DISK_ENCRYPTION
 static int load_qseecom_library()
