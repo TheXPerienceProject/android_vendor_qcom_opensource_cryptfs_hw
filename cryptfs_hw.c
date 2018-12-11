@@ -515,4 +515,5 @@ int should_use_keymaster()
         rc = 0;
      }
      return rc;
+#endif	 
 }
