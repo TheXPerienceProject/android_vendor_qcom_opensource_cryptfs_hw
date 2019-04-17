@@ -217,7 +217,7 @@ static int cryptfs_hw_wipe_key(enum cryptfs_hw_key_management_usage_type usage)
 int set_ice_param(int flag)
 {
 	int  qseecom_fd, ret = -1;
-	struct qseecom_ice_data_t ice_data;
+	struct qseecom_ice_data_t ice_data = {0};
 	qseecom_fd = open("/dev/qseecom", O_RDWR);
 	if (qseecom_fd < 0)
 		return ret;
